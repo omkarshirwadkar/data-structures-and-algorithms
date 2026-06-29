@@ -45,7 +45,6 @@ def printAdjacencyList(n, m, edges):
     for i in range(n + 1):
         print(adjacencyList[i])
 
-
 n, m = [int(x) for x in input("Enter number of nodes and number of edges: ").split()]
 edges = []
 for _ in range(m):
@@ -54,6 +53,5 @@ for _ in range(m):
 print("Adjacency Matrix:")
 printAdjacencyMatrix(n, m, edges)
 print("Weighted Adjacency Matrix:")
-
 print("Adjacency List:")
 printAdjacencyList(n, m, edges)
