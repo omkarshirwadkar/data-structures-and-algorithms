@@ -1,0 +1,11 @@
+
+############################# 1. Bezout's  Identity #################################
+If you want to check whether P can be represented as a combination of X and Y
+
+if P = aX + bY is Possible
+Then you can just do P % gcd(X, Y) == 0
+
+
+############################# 2. MEX Advice/Trick ###################################
+
+A powerful trick when dealing with prefix MEX is to control when 0 appears.
