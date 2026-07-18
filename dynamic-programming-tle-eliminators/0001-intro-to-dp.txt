@@ -1,0 +1,65 @@
+"""
+------------------------------ INTRODUCTION TO DYNAMIC PROGRAMMING --------------------------------------
+########### MINDSET BUILDING ###############
+1. Breaking a problem into smaller subproblems --> Todte jao
+2. How to get answer for bigger problem from smaller subproblems --> Develop a relationship between smaller subproblems
+3. What is the smallest subproblem which is trivial to solve --> Base Case
+4. What is the biggest problem --> Bhul mat jaana main chiz
+
+
+############## DP IDEA BREAKDOWN ################
+
+                                                P
+                                                |
+                                                |
+                    -----------------------------------------------------------------
+                    |                           |                                   |
+                    P1                          P2                                  P3
+                    |                           |                                   |
+            -----------------               -----------------           -----------------
+            |       |       |               |       |       |           |       |       |
+            a1      a2      a3              a2      a4      a5          a1      a4      a5
+          / | \   / | \   / | \           / | \   / | \   / | \       / | \   / | \   / | \
+
+Some DS Storing the above values: call it tempStore
+
+While Calculating P1: 
+It stores all the 3 values in the DS
+tempStore = [a1, a2, a3]
+
+While Calculating P2:
+The value for a2 is not calculated but is retrieved from the DB(tempStore)
+The value for a4 and a5 is stored in the DS
+tempStore = [a1, a2, a3, a4, a5]
+
+While Calculating P3:
+The value for a2, a4, a5 are not calculated but are retrieved from the DB(tempStore)
+
+In the above breakdown, 
+a1 was calculated already in P1
+It is being calculated again at P3 again --> Not good, instead store the value a1 and use it here
+This is the idea behind DP --> Memoization DP
+"""
+
+
+# Fibonacci Number: f(n) = f(n - 1) + f(n - 2) ............. f(1) = 1, f(2) = 1
+'''
+To store the overlapping subproblems you need a key-value pair datastructure
+key ---> To determine the subproblem
+value --> To store the answer to the subproblem
+
+Why Implementing an Array is preferred over a map:
+--> A map is pretty complex
+--> It doesn't always have an O(1) TC, in worst case it is O(n), A TreeMap takes LogN time to retrieve and insert
+--> The goal is to make the index of an array as key --> Makes the retrieval and updation operation O(1)
+
+Sometimes a MAP would be preferred 
+--> A Map is a superset can always be used
+--> When dealing with strings
+
+
+
+#################################################### THINGS TO CHECK WHILE SOLVING PROBLEMS #######################################################
+1. To Check if this sub-problem has been solved before -----------> Default to something which is never possible
+2. To Update/Retrieve the value
+'''
