@@ -23,7 +23,6 @@ def fibIterDP(n):
     return dp[n]
 
 
-
 for i in range(int(input())):
     n = int(input())
     dp = [-1] * (n + 1)
