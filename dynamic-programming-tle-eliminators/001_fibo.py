@@ -18,6 +18,8 @@ def fibIterDP(n):
         dp[i] = dp[i - 1] + dp[i - 2]
     return dp[n]
 
+
+
 for i in range(int(input())):
     n = int(input())
     dp = [-1] * (n + 1)
